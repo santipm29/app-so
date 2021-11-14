@@ -14,7 +14,7 @@ export const Home = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    fetch("http://18.204.18.23/saveUser.php", {
+    fetch("https://ghtofl5jz2.execute-api.us-east-1.amazonaws.com/dev/users", {
       headers: {
         "Content-Type": "application/json",
       },
