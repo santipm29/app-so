@@ -7,6 +7,13 @@ const initialStateForm = {
   UserPhone: "",
 };
 
+const Spinner = () => {
+  return (
+    <div className="spinner-border text-light spinner-border-sm" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </div>
+  );
+};
 export const Home = () => {
   const [form, setForm] = useState(initialStateForm);
   const [loading, setLoading] = useState(false);
@@ -46,7 +53,7 @@ export const Home = () => {
   };
 
   return (
-    <div>
+    <div className="mt-10">
       <h1>Agregar usuario</h1>
       <form onSubmit={onSubmit} autoComplete="off">
         <div className="mb-3">
@@ -90,7 +97,7 @@ export const Home = () => {
         </div>
         <div className="d-grid gap-2">
           <button type="submit" className="btn btn-primary" disabled={loading}>
-            Guardar
+            {loading && <Spinner />} Guardar
           </button>
         </div>
       </form>
